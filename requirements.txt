@@ -1,0 +1,4 @@
+fastecdsa==2.2.3
+mmh3==3.0.0
+numpy==1.21.2
+tenseal==0.3.9
