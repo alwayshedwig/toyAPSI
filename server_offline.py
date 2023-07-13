@@ -12,7 +12,7 @@ oprf_server_key = 1234567891011121314151617181920
 server_point = (oprf_server_key % order_of_generator) * G
 
 
-with open("server_set", "r") as f:
+with open("./data/server_set", "r") as f:
     lines = f.readlines()
     server_set = list(map(int, lines))
 
@@ -49,7 +49,7 @@ for i in range(len(SH_scheme)):
 t3 = time()
 
 # SAVING
-with open("server_preprocessed", "wb") as f:
+with open("./data/server_preprocessed", "wb") as f:
     pickle.dump(poly_coeffs, f)
 
 

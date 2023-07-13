@@ -24,7 +24,7 @@ public_ctxt = ts.context_from(private_ctxt.serialize())
 public_ctxt.make_context_public()
 
 # OPRF layer : client send
-with open("client_preprocessed", "rb") as f:
+with open("./data/client_preprocessed", "rb") as f:
     encoded_client_set = pickle.load(f)
     encoded_client_set = pickle.dumps(encoded_client_set, protocol=None)
 c2s_oprf_communication = len(encoded_client_set)
@@ -150,7 +150,7 @@ with open("client_decryption","wb") as f:
 """
 
 # reconstruct item from hashed item & find out intersection
-with open("client_set","r") as f:
+with open("./data/client_set","r") as f:
     client_set_raw = f.readlines()
 
 client_intersection = []
@@ -173,7 +173,7 @@ print(" ! Disconnected.")
 print("_" * 40)
 
 # validation
-with open("intersection","r") as ft:
+with open("./data/intersection","r") as ft:
     real_intersection = [int(line) for line in ft]
 correctness = set(client_intersection) == set(real_intersection)
 print('[TEST] Intersection Correctness: {}'.format(correctness))

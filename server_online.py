@@ -14,7 +14,7 @@ from para import alpha, plain_modulus, minibin_capacity, circuit_depth, eval_typ
 
 oprf_server_key = 1234567891011121314151617181920
 
-with open("server_preprocessed", "rb") as f:
+with open("./data/server_preprocessed", "rb") as f:
     poly_coeffs = pickle.load(f)
 poly_coeffs_tr = np.transpose(poly_coeffs)
 
